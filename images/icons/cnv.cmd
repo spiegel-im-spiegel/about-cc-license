@@ -1,0 +1,13 @@
+convert by.png            -colorspace CMYK EPDF:by.pdf
+convert cc.png            -colorspace CMYK EPDF:cc.pdf
+convert nc-eu.png         -colorspace CMYK EPDF:nc-eu.pdf
+convert nc-jp.png         -colorspace CMYK EPDF:nc-jp.pdf
+convert nc.png            -colorspace CMYK EPDF:nc.pdf
+convert nd.png            -colorspace CMYK EPDF:nd.pdf
+convert pd.png            -colorspace CMYK EPDF:pd.pdf
+convert remix.png         -colorspace CMYK EPDF:remix.pdf
+convert sa.png            -colorspace CMYK EPDF:sa.pdf
+convert sampling.plus.png -colorspace CMYK EPDF:sampling.plus.pdf
+convert sampling.png      -colorspace CMYK EPDF:sampling.pdf
+convert share.png         -colorspace CMYK EPDF:share.pdf
+convert zero.png          -colorspace CMYK EPDF:zero.pdf
