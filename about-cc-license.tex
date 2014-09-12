@@ -1,6 +1,6 @@
 \documentclass{ltjsarticle}
-\usepackage{fontspec} % 欧文フォント設定（和文フォント設定より先に行う）
-\fontspec{Inconsolatazi4} % Inoconsolataフォントを使用
+\usepackage[no-math]{fontspec} % 欧文フォント設定（和文フォント設定より先に行う）
+\setmonofont[AutoFakeSlant,BoldItalicFeatures={FakeSlant}]{Inconsolatazi4} % Inoconsolataフォントを使用
 \usepackage{upquote}
 \usepackage[ipaex]{luatexja-preset} % 和文フォントにIPAexフォントを指定する
 \usepackage{graphicx}
@@ -13,10 +13,12 @@
 \usepackage[pdfencoding=auto,pdfa]{hyperref} % PDF/A compatible
 
 %% 参考文献
-\usepackage[backend=biber, style=numeric]{biblatex}
+\usepackage[backend=biber,style=numeric]{biblatex}
 \addbibresource{refer.bib}
 
 %% その他
+\pdfminorversion=4 % PDF minor version (0-9)
+\pdfcompresslevel=9 % PDF compress level (0 or 1-9)
 \renewcommand{\emph}[1]{\textsf{\textgt{#1}}} % 強調をゴシック体と Sans Serif に変更する
 
 %% Kindle 用の設定 %%
@@ -24,7 +26,7 @@
 %\usepackage[paperwidth=13.5cm, paperheight=17.25cm, top=0.5cm, left=0.5cm, right=0.5cm, bottom=0.5cm]{geometry} % Kindle layout
 
 %% 文書情報
-\title{\textgt{クリエイティブ・コモンズ・ライセンスについて}}
+\title{\emph{クリエイティブ・コモンズ・ライセンスについて}}
 \author{Spiegel}
 \date{2014-09-11}
 
@@ -41,7 +43,7 @@
     pdfcontactcountry={Japan},
     pdfcontactregion={JA},
     pdfcaptionwriter={Spiegel},
-    baseurl={http://www.baldanders.info/},
+    baseurl={http://www.baldanders.info/spiegel/archive/cc-license/},
     draft=false,
     bookmarks=true,
     bookmarksnumbered=true,
@@ -85,7 +87,7 @@ cc-licenseの条件には表\ref{tbl:cc-req}\footnote{\url{http://creativecommon
 \caption{cc-licenseの条件}\label{tbl:cc-req}
 \end{table}%
 ただし，「表示」は必須条件となっており，「改変禁止」と「継承」は条件が衝突するため同時に指定できません。
-結局，表\ref{tbl:cc-req2}\,の6つの組み合わせが有効となっています\footnote{ロゴやアイコンの使用については\url{http://creativecommons.jp/policies/}\,を参照。}。
+結局，表\ref{tbl:cc-req2}\,の6つの組み合わせが有効となっています\footnote{ロゴやアイコンの使用については\url{http://creativecommons.jp/policies/}\,を参照してください。}。
 \begin{table}[htp]
 \centering
 \begin{tabular}{|>{\columncolor[gray]{0.8}}m{3.5cm}|l|}
@@ -139,7 +141,7 @@ cc-licenseは以下の3つのレイヤで構成されています。
 \item[コモンズ証（Commons Deed）] :\par
     cc-licenseの条件と許可についてHuman-Readableな形で記述したもの。
 \item[法的条項（Legal Code）] :\par
-    c-licenseの内容をLawyer-Readableな形で記述した「利用許諾証」。
+    c-licenseの内容をLawyer-Readableな形で記述した「利用許諾書」。
     法的条項によってcc-licenseが法的拘束力を持つことを担保する。
 \item[メタデータ（Metadata）] :\par
     作品に関する（著作権・ライセンスを含む）情報をMachine-Readableな形で記述したもの。
@@ -158,7 +160,7 @@ cc-licenseは以下の3つのレイヤで構成されています。
 またクリエイティブ・コモンズやcc-licenseはユーザであるlicenseeに対して，fair use（公正な利用），firstsale doctrine（最初の頒布（取引）で権利が消尽すること），表現の自由等の権利を侵害することもありません。
 
 
-\subsection{cc-licenseは作品の「使用」を制限しません}
+\subsection{cc-licenseは作品の「使用」を制限しません} \label{sec:fair use}
 
 著作権は，著作（権）者が明示的に許可しない限り，作品（著作物）の「利用」を制限できます。
 利用として挙げられるものは以下のとおりです。
@@ -170,9 +172,7 @@ cc-licenseは以下の3つのレイヤで構成されています。
 
 一方で，例えば書籍を読んだり音楽を聴いたり建築物に住んだりプログラムを実行したり，といった行為は作品（著作物）の「使用」とみなされ制限の範囲外となります。
 たとえば，ある作品の海賊版（著作（権）者によって許可されない利用）が出回っている場合，（海賊版の出版は著作権に触れますが）海賊版を見たり聞いたりする行為は「使用」なので著作権は関知しません。
-あるいは作品の利用や使用の前段階としての「作品へのアクセス」も著作権の範囲外です。
-（とはいえ，実際には作品の「使用」と「利用」の境界は曖昧で，時にこれが議論になります。
-実はcc-licenseにはこうした曖昧さを「条件」と「許可」を明示的に設定することで回避する狙いもあります）
+あるいは作品の利用や使用の前段階としての「作品へのアクセス」も著作権の範囲外です\footnote{とはいえ，実際には作品の「使用」と「利用」の境界は曖昧で，時にこれが議論になります。実はcc-licenseにはこうした曖昧さを「条件」と「許可」を明示的に設定することで回避する狙いもあります。}。
 
 また作品の利用の一部については「権利の制限」として著作（権）者の許可無く（無断で）行うことができます。
 「権利の制限」の対象となる利用については以下のものがあります。
@@ -306,7 +306,7 @@ cc-licenseでは作品の「使用」および「権利の制限」として認�
 \end{tabular}
 \caption{cc-licenseバージョン2.1日本版}\label{tbl:cc-license-2.1jp}
 \end{table}%
-ただし，日本版以外のバージョンも日本発の作品であれば日本法を準拠法として解釈されるため通常は問題ありません（国際取引の場合はどの国を準拠法とするかで問題になる場合があります）。
+ただし，日本版以外のバージョンも日本発の作品であれば日本法を準拠法として解釈されるため通常は問題ありません\footnote{国際取引の場合はどの国を準拠法とするかで問題になる場合があります。これを避けるために著作権表記にあらかじめ管轄地を明記しておく方法もあります。}。
 
 Generic / Unported / Internationalの各バージョンについては，可能であれば最新版（4.0 International，表\ref{tbl:cc-license-4.0}）にアップデートすることを検討してみてください。
 cc-licenseは常に議論され改良されています\footnote{\url{http://wiki.creativecommons.org/}}。
@@ -367,7 +367,7 @@ cc-licenseは常に議論され改良されています\footnote{\url{http://wik
 \end{table}%
 
 
-\subsection{cc-licenseのメタデータ}
+\subsection{cc-licenseのメタデータ} \label{sec:metadata}
 
 cc-licenseではメタデータの記述にRDF（Resource Description Framework）\cite{Book:KANZAKI-RDF}\,を用います。
 RDFの記述形式としてはXMLやRDFa\footnote{RDFaについては拙文「\href{http://www.baldanders.info/spiegel/archive/rdfa/}{RDFa入門}」を参照して下さい。（\cite{Book:KANZAKI-SHX}\,も参考になります）
@@ -379,7 +379,7 @@ XMPは図\ref{fig:xmp}\,のように記述します。
 \begin{mdframed}
 \small
 \begin{verbatim}
-<?xpacket begin="﻿ id="W5M0MpCehiHzreSzNTczkc9d"?>
+<?xpacket begin="<BOM>"﻿id="W5M0MpCehiHzreSzNTczkc9d"?>
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="3.1-702">
   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     [...]
@@ -391,6 +391,7 @@ XMPは図\ref{fig:xmp}\,のように記述します。
 \caption{XMPパケット} \label{fig:xmp}
 \end{figure}%
 \verb|[...]|\,部分に実際の情報をRDF/XMLで記述します。
+\verb|begin="<BOM>"|\,の部分にはUnicodeのBOM（byte order mark）をセットします。
 
 ドキュメント組版システムである\TeX（pdf\LaTeX\,またはLua\LaTeX）を使ってPDFファイルを作成する場合は，hyperrefおよびhyperxmpパッケージを使ってXMPパケットを埋め込むことができます。
 具体的には文書ファイルのプリアンブル部に図\ref{fig:hyperxmp}\,のように設定します。
@@ -417,23 +418,22 @@ XMPは図\ref{fig:xmp}\,のように記述します。
 \end{figure}%
 この記述によってタイトル・著者名・著作権表記・ライセンスへのURLなどの情報をXMPパケットとして埋め込むことができます。
 \verb|pdflicenseurl|\,でcc-licenseのコモンズ証へのURLが指定されているのがわかると思います。
-この状態でタイプセットするとPDFに著作権情報が埋め込まれます（図\ref{fig:pdf-prop}）。
+この状態でタイプセットするとPDFに著作権情報が埋め込まれます（図\ref{fig:pdf-prop}）\footnote{ただし，この方法でPDFを作成すると，どういうわけかAdobe Readerでは「タグ付きPDF」として認識されません。}。
 \begin{figure}[htp]
 \begin{center}
-\includegraphics[width=4truecm,clip]{images/pdf-property.pdf}
+\includegraphics[width=5truecm,clip]{images/pdf-property.pdf}
 \end{center}
 \caption{PDFのプロパティ（\href{https://wiki.gnome.org/Apps/Evince}{Evince}\,で確認）} \label{fig:pdf-prop}
 \end{figure}%
-（ただし，この方法でPDFを作成すると，どういうわけかAdobe Readerでは「タグ付きPDF」として認識されません）
 
 自身の作品について著作権表示をおこなう際に最低限必要なのは「著作（権）者名」と「作成日（または年）」です（著作（権）者名は本名でなくとも構いません）。
 これにcc-licenseを加えた3点が正しく表示されているかどうか注意して下さい。
 
-著作者であれば作品を作成した時点で自動的に権利が付与されますので ``Copyright \copyright'' は付けなくとも自明です。
-ただし何らかの形で権利が譲渡されている（つまり著作者と著作権者が異なっている）場合は注意が必要です。
+著作者であれば作品を作成した時点で自動的に権利が付与されますので ``Copyright \copyright'' は付けなくとも自明です\footnote{\copyright\,マークは著作権が登録制だった時代の名残です。現在はベルヌ条約に基づき著作権は自動的に著作者に付与されます。}。
+ただし何らかの形で権利が譲渡されている（つまり著作者と著作権者が異なっている）場合は表記に注意が必要です。
 もちろん（たとえ著作者であっても）権利のない人が勝手にライセンスを設定することはできません。
 
-他者の作品を転載（複製・配布）したり二次的著作物の場合は，原則としてオリジナルの著作権情報を付記します（著作（権）者がこれを求めない場合もあります）。
+他者の作品を転載（複製・配布）したり二次的著作物の場合は，原則としてオリジナルの著作権情報を付記します\footnote{著作（権）者がこれを求めない場合もあります。cc-licenseでは著作（権）者であるlicensorが二次的著作物へのクレジット表記を削除するよう要請することができます。}。
 オリジナル作品がcc-licenseの場合は
 \begin{enumerate}
 \item オリジナル作品の（権利の帰属先としての）著作（権）者名
@@ -450,7 +450,7 @@ XMPは図\ref{fig:xmp}\,のように記述します。
 \subsection{cc-licenseと人格権}
 
 日本の著作権法には複製権や頒布権といった「著作財産権」の他に「著作者人格権」があります。
-著作財産権は譲渡可能ですが，著作者人格権は譲渡や放棄はできませんし著作者以外の人が行使することもできません。
+著作財産権は譲渡可能ですが，著作者人格権は譲渡や放棄はできませんし\footnote{著作者に対し著作者人格権の不行使を強制することもできません。} 著作者以外の人が行使することもできません。
 著作者人格権は以下の権利で構成されています。
 \begin{itemize}
 \item 公表権
@@ -459,8 +459,8 @@ XMPは図\ref{fig:xmp}\,のように記述します。
 \end{itemize}
 このうちもっとも強力な権利が「同一性保持権」です。
 日本では（著作者の意に反しているかどうかに関わらず）作品の改変を著作者によって禁止することができます。
-例外はいくつかありますが，このような強い権利は他の国にはありません（同一性保持権自体は他の国でも見られますが，かなり限定的です）。
-このため日本の著作権ライセンスの中には，この「同一性保持権」の不行使を明示しているものもあります。
+例外はいくつかありますが，このような強い権利は他の国にはありません\footnote{同一性保持権自体は他の国でも見られますが，かなり限定的です。}。
+このため日本の著作権ライセンスの中にはlicensorによる「同一性保持権」の不行使を明示しているものもあります。
 
 cc-license日本版では著作者人格権の行使に関しては限定的で
 \begin{mdframed}
@@ -469,13 +469,12 @@ cc-license日本版では著作者人格権の行使に関しては限定的で
 \end{mdframed}
 となっていて，結果的に著作者の名誉・声望を害する形での改変は許可されないことになっています（これ以外の人格権の行使は明示的に「行使しない」（第3条）となっています）。
 
-cc-license 4.0 Internationalでは，著作者人格権はライセンスされない，とあります。
+cc-license 4.0 Internationalでは，著作者人格権はライセンスされない，とあります\footnote{パブリシティー権・プライバシー権といった人格権類似の権利についてもライセンスしないとあります。}。
 \begin{mdframed}
  ``Moral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.'' \par
 （via  ``\href{http://creativecommons.org/licenses/by-sa/4.0/legalcode}{Creative Commons — Attribution-ShareAlike 4.0 International}''  Section 2 b1）
 \end{mdframed}
-これによると，パブリシティー権・プライバシー権といった人格権類似の権利についてもライセンスしないとあります。
-ただし 可能な限り[...]権利を主張しない ともあります。
+ただし「可能な限り[...]権利を主張しない」ともあります。
 
 
 \subsection{cc-licenseと著作隣接権}
@@ -490,7 +489,7 @@ cc-license 4.0 Internationalでは，著作者人格権はライセンスされ�
 \end{itemize}
 cc-license日本版では著作隣接権者についても配慮されています。
 先の人格権についても「実演家の人格権」を含めた記述になっています。
-また著作隣接権者をlicensorに含めるとなると厳密な意味での「著作物」を超える範囲を取り扱うことになります（著作権の存続期間の切れた古典芸能の実演や自然の鳥の声などを録音したレコードなど）。
+また著作隣接権者をlicensorに含めるとなると厳密な意味での「著作物」を超える範囲を取り扱うことになります\footnote{著作権の存続期間の切れた古典芸能の実演や自然の鳥の声などを録音したレコードなど。}。
 そこで日本版ではライセンスの目的物を「著作物」だけではなく，それらを含めた「作品」として取り扱えるようになっています。
 
 cc-license 4.0 Internationalでは ``Similar Rights'' として隣接権にも配慮した記述になっています。
@@ -522,26 +521,30 @@ cc-license 4.0 Internationalでは ``Similar Rights'' として隣接権にも�
 複製と二次的著作物の違いは，複製の場合は複製を行った人には著作権は付与されないですが（当然ですね），二次的著作物の場合は2次創作を行った人とオリジナルの作品の著作（権）者の双方に権利が付与されます。
 これを利用者からみると，二次的著作物を利用するためにはオリジナルの著作（権）者と2次創作の著作（権）者，の双方から許可を得る必要があります。
 
-cc-licenseはサブライセンス（二次的著作物を含む作品の配布者が受領者に再許諾を行うこと）を禁止していますが，ライセンスの条件の範囲内で利用する限りにおいては問題ありません（ただし条件を超える利用を行う場合はオリジナルの著作（権）者からも許可を得る必要があります）。
+cc-licenseはサブライセンス（二次的著作物を含む作品の配布者が受領者に再許諾を行うこと）を禁止していますが，ライセンスの条件の範囲内で利用する限りにおいては問題ありません\footnote{条件を超える利用を行う場合はオリジナルの著作（権）者からも許可を得る必要があります。}。
+またcc-license下の著作物の二次的著作物がcc-license下でない場合があります（「継承」条件がない場合など）。
+この場合でも元の作品の利用許可を妨げるような条件をつけてはいけません。
+
+\subsubsection{キャラクタの権利}
 
 キャラクタやキャラクタの名前の利用については著作権ではなく商標権（工業デザインの場合は意匠権）で制限されている場合があります。
-cc-licenseは商標権や意匠権についてはライセンスしませんので，個別に許可を得る必要があります。
-（キャラクタそのものには著作権はないという説もあります。このため，防衛のためにキャラクタやキャラクタの名前を商標登録することが多いそうです。ちなみに名前や標題に著作権はありません）
+cc-licenseは商標権や意匠権についてはライセンスしませんので，個別に許可を得る必要があります\footnote{キャラクタそのものには著作権はないという説もあります。このため，防衛のためにキャラクタやキャラクタの名前を商標登録することが多いそうです。ちなみに名前や標題に著作権はありません。}。
 
-cc-license下の著作物の二次的著作物がcc-license下でない場合があります（「継承」条件がない場合など）。
-この場合でも元の作品の利用許可を妨げるような条件をつけてはいけません。
+実在の人物やその人物の延長上のキャラクタ（「デーモン小暮閣下」など）に対しては「パブリシティ権（publicity rights）」が適用されます。
+パブリシティ権は肖像権の一種で，「氏名・肖像から生じる経済的利益ないし価値を排他的に支配する権利」（「ダービースタリオン事件」判決文\footnote{\url{http://www.courts.go.jp/hanrei/pdf/A730EBEA9CA60D6249256C7F0023A16E.pdf}} より）と定義されています\footnote{作品上の架空のキャラクタや無機物やペット等にはパブリシティ権は適用されません。}。
+cc-licenseでは，パブリシティ権についてもライセンスしません。
 
 \subsubsection{パロディについて}
 
-海外ではパロディ（parody）・風刺はfair use（公正な利用）としてある程度認められている国もありますが，日本ではパロディに関する規定そのものがありません。
-そのため現状では「引用」か「二次的著作物」かで線引されることになります（パロディはいわゆる「パクり」とはちがいます）。
-商業作品の場合は（防衛のために）あらかじめオリジナル作品の著作（権）者から許可を得ていることもあるようですが，そうでない場合は特に悪質なものでない限り「黙認」されているのが現状のようです。
+海外では，パロディ（parody）・風刺についてfair use（公正な利用）としてある程度認められている国もありますが，日本ではパロディに関する規定そのものがありません。
+そのため現状では「引用」（\ref{sec:fair use}\,節参照）か「二次的著作物」かで線引されることになります（パロディはいわゆる「パクり」とはちがいます）。
+商業作品の場合は（防衛のために）あらかじめオリジナル作品の著作（権）者から許可を得ていることもあるようですが，そうでない場合は特に悪質なものでない限り「黙認」されているのが現状のようです\footnote{しかし，いったん訴訟になった場合，パロディ作品が「引用」として認められるのはかなり難しいと思います。パロディは「批判」を暗に含んでいるため，一律に規制するのは言論の自由を奪いかねないという意見もあります。}。
 実はcc-licenseにはこうした曖昧さによるリスクを「条件」と「許可」を明示的に設定することで回避する狙いもあります。
 
 
 \subsection{技術的保護手段の禁止} \label{sec:drm}
 
-cc-license日本版では作品の正当な「使用」または許可された「利用」を制限する技術的保護手段（DVDにおけるCSS（Content Scramble System）など）を用いることを禁止しています。
+cc-license日本版では作品の正当な「使用」または許可された「利用」を制限する技術的保護手段\footnote{たとえばDVDにおけるCSS（Content Scramble System）など} を用いることを禁止しています。
 \begin{mdframed}
 「あなたは、この利用許諾条項と矛盾する方法で本著作物へのアクセス又は使用をコントロールするような技術的保護手段を用いて、本作品又はその二次的著作物を利用してはならない」\par
 （「\href{http://creativecommons.org/licenses/by-sa/2.1/jp/legalcode}{クリエイティブ・コモンズ　リーガル・コード}」第5条hより）
@@ -570,7 +573,7 @@ cc-licenseでは「ロイヤリティ・フリー」を明記しています。
 「例えば、CCライセンスの始まった米国では、著作権管理団体はあまり強い力を持った存在ではありません。彼らの著作権管理は、基本的に非独占的です。つまり、著作権管理団体に自分の作品の管理をお願いしながら、同時に、自分でも好きなように作品をライセンスしたりできます。したがって、CCライセンスをつけるかどうか、というときに、著作権管理団体との関係や報酬請求権の処理については、あまり悩む必要なく、決定することができます。その結果、米国ライセンス2.0では、著作権管理団体を通じて請求できる報酬請求権については、商業利用もCCライセンスで許諾している場合（非営利アイコンのついていないライセンスを採用している場合）には、著作権管理団体を通じた報酬請求権を放棄するものとし、非営利ライセンスを採用している場合には、商業利用については別途ライセンスをする意思表示として、著作権管理団体を通じた報酬請求権を留保するものとしていました」\par
 （「\href{http://creativecommons.jp/weblog/2006/11/1930/}{【CCPLv3.0】著作権管理団体を通じての報酬請求権に関する議論}」より）
 \end{mdframed}
-しかし欧州や日本においては必ずしもこのような状況にはなってないため問題になります。
+しかし日本など他の国においては必ずしもこのような状況にはなってないため問題になります。
 そこでcc-license 3.0の議論の際に以下のような方針が立てられました\footnote{\url{http://creativecommons.jp/weblog/2006/11/1930/}}。
 \begin{enumerate}
 \item 法定の報酬請求権が法律上放棄できない国においては、許諾者はその請求権を留保する。
@@ -601,38 +604,50 @@ cc-licenseには「責任制限」の項目があり，「ライセンス対象�
 一方，未成年の licensor は法定代理人の同意があることを何らかの形で明示したほうがトラブルが少なくて済みます。
 
 
-\section{フィードバック}
+\clearpage
+\section*{参考資料}
 
-このドキュメントはWeb上で公開している「\href{http://www.baldanders.info/cc-license.shtml#aboutCC}{クリエイティブ・コモンズ・ライセンスについて}」をベースにPDF化したものです。
-このドキュメントへのフィードバックは「\href{http://www.baldanders.info/cc-license.shtml#aboutCC}{クリエイティブ・コモンズ・ライセンスについて}」までお寄せ下さい。
-
-
-\section{参考資料}
-
-以下に参考となる（かもしれない）Webページまたは参考図書を挙げます。
+以下に参考となる（かもしれない）Webページを挙げます。
 
 \begin{description}
 
-\item[\href{http://creativecommons.jp/faq/detail/}{FAQ:詳細版 - クリエイティブ・コモンズ・ジャパン}] :\par
+\item[FAQ:詳細版 - クリエイティブ・コモンズ・ジャパン] :\par
+    \url{http://creativecommons.jp/faq/detail/}\par
     cc-licenseについてよくある質問と答え（FAQ）が掲載されています。
-    cc-licenseについてわからないことがある場合は，まずこちらを参照することをお薦めします。
+    cc-licenseについてわからないことがある場合は，まずこちらを参照してみてください。
     ただし最近の情報が少ないのが難点です。
 
-\item[\href{https://creativecommons.org/Version4}{What’s New in 4.0 - Creative Commons}] :\par
+\item[What's New in 4.0 - Creative Commons] :\par
+    \url{https://creativecommons.org/Version4}\par
     cc-license 4.0の概要について。
-    cc-license 4.0について日本語で解説しているところはほとんどありません。
+    cc-license 4.0について日本語で解説しているページがほとんどないのが残念です。
 
-\item[\href{http://onm-tm.jp/news/69}{キャラクターの著作権法上の取扱いについて}] :\par
+\item[XMP™（Extensible Metadata Platform）仕様についてのメモ] :\par
+    \url{http://www.antenna.co.jp/xml/xmllist/XMP/AboutXMP.htm}\par
+    作品にメタデータを埋め込む規格XMP（\ref{sec:metadata}\,章参照）について解説しています。
+
+\item[キャラクターの著作権法上の取扱いについて] :\par
+    \url{http://onm-tm.jp/news/69}\par
     キャラクターと著作権との関わりについて事例をまじえて解説しています。
 
-\item[\href{http://otapol.jp/2014/09/post-1542.html}{『ハイスコアガール』問題について福井健策弁護士に話をうかがってみた}] :\par
+\item[『ハイスコアガール』問題について福井健策弁護士に話をうかがってみた] :\par
+    \url{http://otapol.jp/2014/09/post-1542.html}\par
     2014年に，スクウェア・エニックスが出版するマンガ雑誌において，SNKが自社のゲームのキャラクタを無断で利用したとして刑事告発した事件について考察したものです。
-    パロディ・二次的著作物・引用といったものに関する貴重な事例になると思います。
+    パロディ・2次創作・引用といったものに関する貴重な事例になると思います。
     なおゲームは「映画の著作物」に分類され，他の著作物に比べて著作権法上かなり優遇されています。
 
 \end{description}
 
+
 \nocite{Book:CCJP}\nocite{Book:NAWA-CR2}\nocite{Book:NOGUCHI-COPY}\nocite{Book:CHEN-FC}
 \printbibliography[title=参考図書]
+
+
+\section*{ドキュメントの著作権とフィードバック}
+
+このドキュメントはWeb上で公開している「\href{http://www.baldanders.info/cc-license.shtml#aboutCC}{クリエイティブ・コモンズ・ライセンスについて}」をベースにPDF化したものです。
+このドキュメントはcc-licenseの「表示」ライセンスで提供しています\footnote{\url{http://creativecommons.org/licenses/by/4.0/}}。
+
+このドキュメントへのフィードバックは「\href{http://www.baldanders.info/cc-license.shtml#aboutCC}{クリエイティブ・コモンズ・ライセンスについて}」までお寄せ下さい。
 
 \end{document}
