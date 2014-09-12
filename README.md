@@ -46,10 +46,10 @@ images ディレクトリ以下の Creative Commons 関連のライセンスマ�
 のコメント部分を解除することで Kindle 等のタブレットでの表示に適したレイアウトでタイプセットできます。
 
 なお，メインのフォントには KB明朝M を指定しています。
-KB明朝M は [Kobo Hack Uploader](http://ux.getuploader.com/KOBO_HACK/) で[取得](http://ux.getuploader.com/KOBO_HACK/search?q=kobo%E6%98%8E%E6%9C%9D)することができます。
+KB明朝M は [Kobo Hack Uploader](http://ux.getuploader.com/KOBO_HACK/) で[取得](http://ux.getuploader.com/KOBO_HACK/search?q=KBMincho)することができます。
 念のためバージョン0.43のファイルを[本家サイトに置いてあります](http://www.baldanders.info/fonts/KBMincho043.zip)。
 
-KB明朝/KB明朝M フォントは IPAex 明朝フォントの改変版で，画面の小さいタブレット等で見易いよう文字が太くなっています。
+KB明朝/KB明朝M フォントは [IPAex 明朝フォント](http://ipafont.ipa.go.jp/)の改変版で，画面の小さいタブレット等で見易いよう文字が太くなっています。
 
 ### PDF/A
 

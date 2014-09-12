@@ -3,12 +3,14 @@
 \setmonofont[AutoFakeSlant,BoldItalicFeatures={FakeSlant}]{Inconsolatazi4} % Inoconsolataフォントを使用
 \usepackage{upquote}
 \usepackage[ipaex]{luatexja-preset} % 和文フォントにIPAexフォントを指定する
+\usepackage{luatexja-adjust} % 行長調整
 \usepackage{graphicx}
 \usepackage[table]{xcolor}
-%\usepackage{tabularx}
-%\usepackage{longtable}
+%\usepackage{tabularx} % 表の全体幅が決まっている場合
+%\usepackage{longtable} % ページをまたぐ表
+%\usepackage{luatexja-ruby} % ルビ
 \usepackage{tikz}
-\usepackage[framemethod=tikz]{mdframed}
+\usepackage[framemethod=tikz]{mdframed} % 枠で囲む
 \usepackage{hyperxmp} % XMP support with hyperref
 \usepackage[pdfencoding=auto,pdfa]{hyperref} % PDF/A compatible
 
@@ -19,6 +21,7 @@
 %% その他
 \pdfminorversion=4 % PDF minor version (0-9)
 \pdfcompresslevel=9 % PDF compress level (0 or 1-9)
+\ltjenableadjust % JIS X 4051 互換の行長調整を行う
 \renewcommand{\emph}[1]{\textsf{\textgt{#1}}} % 強調をゴシック体と Sans Serif に変更する
 
 %% Kindle 用の設定 %%
