@@ -13,12 +13,18 @@
 
 ## タイプセットについて
 
-### TeX 環境
+### TeX 環境とタイプセット手順
 
 タイプセットに必要な TeX 環境については [TeX Live](http://www.tug.org/texlive/) 2014 以降が導入されていることを前提とします。
 
 タイプセットは [LuaLaTeX](http://oku.edu.mie-u.ac.jp/~okumura/texwiki/?LuaTeX) を用い，ビルド作業には [latexmk](http://oku.edu.mie-u.ac.jp/~okumura/texwiki/?Latexmk) を用いています。
-作者の環境は Windows 7 64bit です。リポジトリに挙がっている .latexmkrc の設定で上手く動かない場合は適宜修正して下さい。
+以下のコマンドで PDF まで自動でタイプセットを行います。
+
+```
+> latexmk about-cc-license.tex
+```
+
+なお，作者の環境は Windows 7 64bit です。リポジトリに挙がっている .latexmkrc の設定で上手く動かない場合は適宜修正して下さい。
 
 - [LuaTeX-ja に関する覚え書き](http://www.baldanders.info/mdwiki/#!luatexja.md)
 
