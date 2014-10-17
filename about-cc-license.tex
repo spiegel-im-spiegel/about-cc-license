@@ -84,7 +84,7 @@ cc-licenseの条件には表\ref{tbl:cc-req}\footnote{\url{http://creativecommon
     \hline
     \includegraphics[width=1truecm,clip]{images/icons/nd.pdf}    & \textgt{改変禁止} & 元の作品を改変しないこと \\
     \hline
-    \includegraphics[width=1truecm,clip]{images/icons/sa.pdf}    & \textgt{継承}     & 元の作品と同じ組み合わせのcc-licenseで公開すること \\
+    \includegraphics[width=1truecm,clip]{images/icons/sa.pdf}    & \textgt{継承}     & 改変した作品について，元の作品と同じ組み合わせのcc-licenseで公開すること \\
     \hline
 \end{tabular}
 \caption{cc-licenseの条件}\label{tbl:cc-req}
@@ -118,19 +118,22 @@ cc-licenseの条件には表\ref{tbl:cc-req}\footnote{\url{http://creativecommon
 \end{table}%
 これらの条件（の組み合わせ）を守る限り，ライセンスを受けるユーザ（licensee）は以下に示す非排他的（または非独占的）な「利用」が可能です。
 \begin{itemize}
-\item 作品をコピーすること
-\item コピーした作品を配布すること
-\item コピーした作品を公の場で展示・演奏すること
-\item コピーした作品をデジタル形式によって公の場で展示・演奏すること
-\item 作品を同一状態で別の形式に変換すること（逐語的コピー）
-\item 作品を改変し公表すること（二次的著作物，ただし改変禁止の条件がない場合）
+\item 作品をコピーすること，または作品を同一状態で別の形式に変換（逐語的コピー）すること 〈複製〉
+\item コピー（デジタル形式など逐語的コピーを含む）した作品を公表すること 〈頒布，上演，演奏，上映，口述，展示，公衆送信（送信可能化を含む）〉
+\item 作品に含まれる実演・レコード・放送をコピーし，頒布・再放送・公衆送信（送信可能化を含む）すること 〈著作隣接権を許可〉
+\item 作品を改変すること（ただし改変禁止の条件がない場合） 〈二次的著作物の創作，複製〉
+\item 改変した作品を公表すること（ただし改変禁止の条件がない場合） 〈二次的著作物の頒布，上演，演奏，上映，口述，展示，公衆送信（送信可能化を含む）〉
 \end{itemize}
-二次的著作物の例としては編集，編曲，翻訳，脚色，パロディ化，データベース化といったものが挙げられます（二次的著作物については\ref{sec:adaptations}節で更に詳しく紹介します）。
-また，以下の「利用」については条件によらずlicenseeには許可されていません。
+「実演家の権利」「レコード製作者の権利」「放送事業者の権利」「有線放送事業者の権利」をまとめて「著作隣接権」と呼びます。
+著作隣接権については\ref{sec:similar-rights}節で詳しく紹介します。
+元の作品を改変したものを「二次的著作物」と言います。
+二次的著作物については\ref{sec:adaptations}節で詳しく紹介します。
+
+以下の「利用」については条件によらずlicenseeには許可されていません。
 \begin{itemize}
 \item 作品およびそのコピーについて，著作権表示を改変・削除すること
 \item 作品およびそのコピーについて，ライセンスおよびその条件を変更すること
-\item 作品の正当な「使用」または許可された「利用」を制限する技術的保護手段を用いること（技術的保護手段については\ref{sec:drm}節で更に詳しく紹介します）
+\item 作品の正当な「使用」または許可された「利用」を制限する技術的保護手段を用いること（技術的保護手段については\ref{sec:drm}節で詳しく紹介します）
 \end{itemize}
 さらに，licenseeがcc-licenseによって定めた条件（営利目的利用，二次的著作物など）を超える利用を行いたい場合は，licensorである著作（権）者から個別に許可を得る必要があります。
 （たとえば，自分の作品にcc-licenseを付与しつつロイヤリティを得たい場合は，cc-licenseに「非営利」の条件を付け，営利目的で利用したいユーザ向けには個別に契約を行う，といった方法もあります）
@@ -159,8 +162,9 @@ cc-licenseは以下の3つのレイヤで構成されています。
 \item 世界中で適用されます。
 \item 作品の著作権の存続期間の間，持続します。
 \end{itemize}
-さらにクリエイティブ・コモンズやcc-licenseはlicensorである著作（権）者から権利を奪いません（言い方を変えれば作品は著作（権）者自身が管理する必要があります）。
-またクリエイティブ・コモンズやcc-licenseはユーザであるlicenseeに対して，fair use（公正な利用），firstsale doctrine（最初の頒布（取引）で権利が消尽すること），表現の自由等の権利を侵害することもありません。
+さらにクリエイティブ・コモンズやcc-licenseは，著作（権）者であるlicensorから権利を奪いません。
+ユーザであるlicenseeに対してもfair use（公正な利用），firstsale doctrine（最初の頒布（取引）で権利が消尽すること），表現の自由等の権利を侵害することはありません。
+クリエイティブ・コモンズは作品や権利の管理を行わず，そのための契約を著作（権）者と交わすこともありません（言い方を変えれば作品は著作（権）者自身が管理する必要があります）。
 
 
 \subsection{cc-licenseは作品の「使用」を制限しません} \label{sec:fair use}
@@ -168,8 +172,8 @@ cc-licenseは以下の3つのレイヤで構成されています。
 著作権は，著作（権）者が明示的に許可しない限り，作品（著作物）の「利用」を制限できます。
 利用として挙げられるものは以下のとおりです。
 \begin{itemize}
-\item 複製（一部または全部，デジタル化を含む），上演，演奏，上映，公衆送信，口述，展示，頒布，譲渡，貸与
-\item 二次的著作物（\ref{sec:adaptations}節）の作成・複製・頒布・譲渡
+\item 複製（一部または全部，デジタル化を含む），頒布，上演，演奏，上映，口述，展示，公衆送信（送信可能化を含む），譲渡，貸与
+\item 二次的著作物（\ref{sec:adaptations}節）の作成・複製・頒布・上演・演奏・上映・口述・展示・公衆送信（送信可能化を含む）・譲渡・貸与
 \item 編集，データベース化
 \end{itemize}
 
@@ -500,7 +504,7 @@ cc-license 4.0 Internationalでは，著作者人格権はライセンスされ�
 ただし「可能な限り[...]権利を主張しない」ともあります。
 
 
-\subsection{cc-licenseと著作隣接権}
+\subsection{cc-licenseと著作隣接権} \label{sec:similar-rights}
 
 日本の著作権法には更に「著作隣接権」が存在します。
 「著作隣接権」は以下の権利で構成されています。
@@ -513,9 +517,29 @@ cc-license 4.0 Internationalでは，著作者人格権はライセンスされ�
 cc-license日本版では著作隣接権者についても配慮されています。
 先の人格権についても「実演家の人格権」を含めた記述になっています。
 また著作隣接権者をlicensorに含めるとなると厳密な意味での「著作物」を超える範囲を取り扱うことになります\footnote{著作権の存続期間の切れた古典芸能の実演や自然の鳥の声などを録音したレコードなど。}。
-そこで日本版ではライセンスの目的物を「著作物」だけではなく，それらを含めた「作品」として取り扱えるようになっています。
+そこで日本版ではライセンスの目的物を「著作物」だけではなく，それらを含めた「作品」として取り扱い，以下の許可を行っています。
+\begin{mdframed}
+「本作品に含まれる実演を、録音・録画すること（録音･録画物を増製することを含む）、録音･録画物により頒布すること、公衆送信を行うこと」\par
+（「\href{http://creativecommons.org/licenses/by-sa/2.1/jp/legalcode}{クリエイティブ・コモンズ　リーガル・コード}」第3条dより）
+\end{mdframed}
+\begin{mdframed}
+「本作品に含まれるレコードを、複製すること、頒布すること、公衆送信を行うこと」\par
+（「\href{http://creativecommons.org/licenses/by-sa/2.1/jp/legalcode}{クリエイティブ・コモンズ　リーガル・コード}」第3条eより）
+\end{mdframed}
+\begin{mdframed}
+「本作品に含まれる、放送に係る音又は影像を、複製すること、その放送を受信して再放送すること又は有線放送すること、その放送又はこれを受信して行う有線放送を受信して送信可能化すること、そのテレビジョン放送又はこれを受信して行う有線放送を受信して、影像を拡大する特別の装置を用いて公に伝達すること」\par
+（「\href{http://creativecommons.org/licenses/by-sa/2.1/jp/legalcode}{クリエイティブ・コモンズ　リーガル・コード}」第3条fより）
+\end{mdframed}
+\begin{mdframed}
+「本作品に含まれる、有線放送に係る音又は影像を、複製すること、その有線放送を受信して放送し、又は再有線放送すること、その有線放送を受信して送信可能化すること、その有線テレビジョン放送を受信して、影像を拡大する特別の装置を用いて公に伝達すること」\par
+（「\href{http://creativecommons.org/licenses/by-sa/2.1/jp/legalcode}{クリエイティブ・コモンズ　リーガル・コード}」第3条gより）
+\end{mdframed}
 
-cc-license 4.0 Internationalでは ``Similar Rights'' として隣接権にも配慮した記述になっています。
+cc-license 4.0 Internationalでは ``Similar Rights'' として隣接権を含んだ形で許可を行っています。
+\begin{mdframed}
+ ``\emph{Licensed Rights} means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.'' \par
+（via  ``\href{http://creativecommons.org/licenses/by-sa/4.0/legalcode}{Creative Commons — Attribution-ShareAlike 4.0 International}''  Section 1 i）
+\end{mdframed}
 
 
 \subsection{二次的著作物の著作権} \label{sec:adaptations}
